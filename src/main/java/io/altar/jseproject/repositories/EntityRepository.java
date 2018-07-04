@@ -1,8 +1,10 @@
 package io.altar.jseproject.repositories;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 import io.altar.jseproject.model.Entity;
+import io.altar.jseproject.model.Product;
 
 
 
@@ -27,10 +29,9 @@ public abstract class EntityRepository <T extends Entity> {
 	}
 
 	
-	public void getEntity() {
-		for( T Entity : map.values()) {
-			System.out.println(Entity);
-		}
+	public Collection<T> getEntity() {
+		
+		return map.values();
 	}
 
 	public T getEntity(long ID) {
@@ -55,8 +56,8 @@ public abstract class EntityRepository <T extends Entity> {
 	}
 
 	
-	public void removeEntity(long ID) {
-		map.remove(ID);
+	public void removeEntity(T Entity) {
+		map.remove(Entity.getID(), Entity);
 	}
 
 }

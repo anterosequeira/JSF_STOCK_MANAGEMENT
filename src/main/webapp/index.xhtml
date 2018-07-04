@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-	</h:head>
-	<h:body>
-	<h3>Por favor selecione uma das seguintes opcoes:</h3>
-		<h:form>	
-			<h:commandButton value=" Lista de produtos" action="Products" /><br />	
-			<h:commandButton value="Lista de  prateleiras" action="Shelfs" /><br />
-			
-		</h:form>
-	</h:body>
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+	<h:form>
+	
+<p:growl id="messages" showDetail="true"/>
+ 
+    <p:menuButton value="Products">
+        <p:menuitem value="Create" action="createP" update="messages" icon="ui-icon-disk"/>
+        <p:menuitem value="Update" action="updateP" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+        <p:menuitem value="Read" action="readP" update="messages" icon="ui-icon-extlink"/>      
+    </p:menuButton>
+    
+    <p:menuButton value="Shelf">
+        <p:menuitem value="Create" action="createS" update="messages" icon="ui-icon-disk"/>
+        <p:menuitem value="Update" action="updateS" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+        <p:menuitem value="Read" action="readS" update="messages" icon="ui-icon-extlink"/>      
+    </p:menuButton>
+
+
+
+	</h:form>
+</h:body>
 </html>
