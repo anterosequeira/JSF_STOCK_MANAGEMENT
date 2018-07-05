@@ -11,6 +11,7 @@ public class Shelf extends Entity{
 	private float PPD;
 	
 	
+	
 	public void setCapacity(int capacity){
 		this.capacity = capacity;
 	}	

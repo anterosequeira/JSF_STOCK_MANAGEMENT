@@ -27,6 +27,7 @@ public class ShelfBean
 
 	private Shelf s = new Shelf();
 	
+	
 	public Shelf getS() {
 		return s;
 	}

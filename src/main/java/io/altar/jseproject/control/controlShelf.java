@@ -14,20 +14,20 @@ import io.altar.jseproject.repositories.ShelfRepository;
 public class controlShelf {
 
 	static EntityRepository<Shelf> DbShelf = ShelfRepository.getInstance();
-	
-public static void createShelf(Shelf s){
-		
 
-	DbShelf.addEntity(s);		
+	public static void createShelf(Shelf s){
+
+
+		DbShelf.addEntity(s);		
 	}
 
-public static Collection<Shelf> getShelfs(){
-	
-	return DbShelf.getEntity();
-}
+	public static Collection<Shelf> getShelfs(){
 
-public static void removeShelf(Shelf s){
-	
-	DbShelf.removeEntity(s);
-}
+		return DbShelf.getEntity();
+	}
+
+	public static void removeShelf(Shelf s){
+
+		DbShelf.removeEntity(s);
+	}
 }

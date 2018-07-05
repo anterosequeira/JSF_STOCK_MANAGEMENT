@@ -16,7 +16,7 @@
 			value="#{shelfBean.shelfs}" editable="true"
 			style="margin-bottom:20px">
 			<f:facet name="header">
-           Product editing
+           Shelf editing
        </f:facet>
 
 			<p:ajax event="rowEdit" update=":form:msgs" />
@@ -47,6 +47,17 @@
 					</f:facet>
 				</p:cellEditor>
 			</p:column>
+			
+			<p:column headerText="Product">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{shelf.productAlb}" /></f:facet>
+               <f:facet name="input">
+                   <p:selectOneMenu value="#{shelf.productAlb}"  style="width:100%">
+                       <f:selectItems value="#{productBean.products}"  var="man" itemLabel="#{man}" itemValue="#{man}" />
+                   </p:selectOneMenu>
+               </f:facet>
+           </p:cellEditor>
+       </p:column>
 
 			
 			

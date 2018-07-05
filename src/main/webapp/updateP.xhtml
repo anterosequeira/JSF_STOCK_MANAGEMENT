@@ -58,6 +58,21 @@
 				</p:cellEditor>
 			</p:column>
 			
+			<p:column headerText="Shelf list">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{product.list}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{product.list}" style="width:100%" label="Shelf list" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			
+			
+			
+			
+			
 			<p:column style="width:32px">
 				<p:rowEditor />
 			</p:column>
