@@ -71,4 +71,5 @@ public class Product extends Entity {
 					"IVA: " + this.IVA + ", "+ "PVP: " + this.PVP;
 		}		
 	}
+	
 }

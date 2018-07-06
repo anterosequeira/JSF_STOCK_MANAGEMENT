@@ -1,7 +1,5 @@
 package io.altar.jseproject.model;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
 
 
 public class Shelf extends Entity{

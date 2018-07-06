@@ -52,8 +52,8 @@
            <p:cellEditor>
                <f:facet name="output"><h:outputText value="#{shelf.productAlb}" /></f:facet>
                <f:facet name="input">
-                   <p:selectOneMenu value="#{shelf.productAlb}"  style="width:100%">
-                       <f:selectItems value="#{productBean.products}"  var="man" itemLabel="#{man}" itemValue="#{man}" />
+                   <p:selectOneMenu converter="someConverter" value="#{productBean.products}"  style="width:100%">
+                       <f:selectItems value="#{productBean.products}" converter="someConverter"  var="man" itemLabel="#{man}" itemValue="#{man}" />
                    </p:selectOneMenu>
                </f:facet>
            </p:cellEditor>
