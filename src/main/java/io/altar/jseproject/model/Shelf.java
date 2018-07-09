@@ -30,17 +30,17 @@ public class Shelf extends Entity{
 	}	
 	
 	
-	public String toString(){
-		if (this.productAlb!= null){
-			return "ID:" + this.getID() + ", "+ "Capacidade: " +
-				this.capacity + ", " + "Produto que alberga: " + this.productAlb.getID() + ", " +
-				"Preco de aluguer de localizacao (diario): " + this.PPD;
-		}
-		else{
-			
-			return "ID:" + this.getID() + ", "+ "Capacidade: " +
-					this.capacity + ", " + "Nao alberga nenhum produto: "+ ", " +
-					"Preco de aluguer de localizacao (diario): " + this.PPD;
-		}		
-	}
+//	public String toString(){
+//		if (this.productAlb!= null){
+//			return "ID:" + this.getID() + ", "+ "Capacidade: " +
+//				this.capacity + ", " + "Produto que alberga: " + this.productAlb.getID() + ", " +
+//				"Preco de aluguer de localizacao (diario): " + this.PPD;
+//		}
+//		else{
+//			
+//			return "ID:" + this.getID() + ", "+ "Capacidade: " +
+//					this.capacity + ", " + "Nao alberga nenhum produto: "+ ", " +
+//					"Preco de aluguer de localizacao (diario): " + this.PPD;
+//		}		
+//	}
 }

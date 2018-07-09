@@ -6,9 +6,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import io.altar.jseproject.control.controlProduct;
 import io.altar.jseproject.control.controlShelf;
-import io.altar.jseproject.model.Product;
 import io.altar.jseproject.model.Shelf;
 
 @Named("shelfBean")
@@ -17,13 +15,6 @@ public class ShelfBean
 {
 	@Inject
 	private controlShelf cs;
-	public controlShelf getCs() {
-		return cs;
-	}
-
-	public void setCs(controlShelf cs) {
-		this.cs = cs;
-	}
 
 	private Shelf s = new Shelf();
 	
@@ -38,13 +29,13 @@ public class ShelfBean
 	
 	public String createShelf(Shelf s){
 
-		controlShelf.createShelf(s);
+		cs.createShelf(s);
 		return "index";
 	}
 	
 public Collection<Shelf> getShelfs(){
 		
-		return controlShelf.getShelfs();
+		return cs.getShelfs();
 }
 	
 	
@@ -52,7 +43,7 @@ public Collection<Shelf> getShelfs(){
 	
 	public void removeShelf(Shelf s){
 
-		controlShelf.removeShelf(s);
+		cs.removeShelf(s);
 	
 	}
 

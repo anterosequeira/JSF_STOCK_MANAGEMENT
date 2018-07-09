@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	</h:head>
 	<h:body>
-		<h:form>					
-			</h:selectOneRadio>
-			<h:commandButton value="voltar" action="index" />
+	<h3>Novo produto </h3>
+		<h:form>				
+			
+			<h3>IVA</h3> <h:inputText value="#{productBean.p.IVA}" />
+			<h3>Desconto</h3> <h:inputText value="#{productBean.p.VUD}" />
+			<h3>PVP</h3> <h:inputText value="#{productBean.p.PVP}" />
+			 <br/>
+			 <br/>
+			<p:commandButton action = "#{productBean.createProduct(productBean.p)}" 
+			value="guardar"  />
+			<p:commandButton value="voltar" action="index" />
+			
 		</h:form>
 	</h:body>
 </html>

@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.HashMap;
 
 import io.altar.jseproject.model.Entity;
-import io.altar.jseproject.model.Product;
 
 
 

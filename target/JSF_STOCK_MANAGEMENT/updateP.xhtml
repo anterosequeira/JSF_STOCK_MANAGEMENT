@@ -1,9 +1,93 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+	<h:form id="form">
+		<p:growl id="msgs" showDetail="true" />
 
-	<ui:composition template="">
-	</ui:composition>
+		<p:dataTable id="product1" var="product"
+			value="#{productBean.products}" editable="true"
+			style="margin-bottom:20px">
+			<f:facet name="header">
+           Product editing
+       </f:facet>
+
+			<p:ajax event="rowEdit" update=":form:msgs" />
+			<p:ajax event="rowEditCancel" update=":form:msgs" />
+
+			<p:column headerText="Id">
+				<h:outputText value="#{product.ID}" />
+			</p:column>
+
+			<p:column headerText="IVA">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{product.IVA}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{product.IVA}" style="width:100%" label="IVA" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+			<p:column headerText="VUD">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{product.VUD}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{product.VUD}" style="width:100%" label="VUD" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+			<p:column headerText="PVP">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{product.PVP}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{product.PVP}" style="width:100%" label="PVP" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			
+			<p:column headerText="Shelf list">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{product.list}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{product.list}" style="width:100%" label="Shelf list" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			
+			
+			
+			
+			
+			<p:column style="width:32px">
+				<p:rowEditor />
+			</p:column>
+			
+	<p:column style="width:32px">
+				<p:commandButton icon="ui-icon-trash" title="Delete"
+					action="#{productBean.removeProduct(product)}" ajax="false" />
+			</p:column>
+			
+			
+
+		</p:dataTable>
+		<p:commandButton value="voltar" action="index" />
+	</h:form>
+</h:body>
+
+
 </html>

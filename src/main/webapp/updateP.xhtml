@@ -3,7 +3,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </h:head>
@@ -58,16 +60,7 @@
 				</p:cellEditor>
 			</p:column>
 			
-			<p:column headerText="Shelf list">
-				<p:cellEditor>
-					<f:facet name="output">
-						<h:outputText value="#{product.list}" />
-					</f:facet>
-					<f:facet name="input">
-						<p:inputText value="#{product.list}" style="width:100%" label="Shelf list" />
-					</f:facet>
-				</p:cellEditor>
-			</p:column>
+			
 			
 			
 			

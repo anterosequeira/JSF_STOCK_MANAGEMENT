@@ -2,8 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+      <h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	</h:head>
+	<h:body>
+	<h3>Nova prateleira </h3>
+		<h:form>				
+			
+			<h3>capacity</h3> <h:inputText value="#{shelfBean.s.capacity}" />
+			<h3>PPD</h3> <h:inputText value="#{shelfBean.s.PPD}" />
+			
+			
+			
+			 <br/>
+			 
+			 <br/>
+			<p:commandButton action = "#{shelfBean.createShelf(shelfBean.s)}" 
+			value="guardar"  />
+			<p:commandButton value="voltar" action="index" />
+			
+	
+    
+		</h:form>
+	</h:body>
 
-	<ui:composition template="">
-	</ui:composition>
+	
 </html>

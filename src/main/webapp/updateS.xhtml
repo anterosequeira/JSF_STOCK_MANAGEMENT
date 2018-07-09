@@ -3,7 +3,9 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
 	  
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,13 +16,12 @@
 
 		<p:dataTable id="shelf1" var="shelf"
 			value="#{shelfBean.shelfs}" editable="true"
-			style="margin-bottom:20px">
+			style="margin-bottom:20px" skipChildren="">
 			<f:facet name="header">
            Shelf editing
        </f:facet>
 
-			<p:ajax event="rowEdit" update=":form:msgs" />
-			<p:ajax event="rowEditCancel" update=":form:msgs" />
+			
 
 			<p:column headerText="Id">
 				<h:outputText value="#{shelf.ID}" />
@@ -50,10 +51,10 @@
 			
 			<p:column headerText="Product">
            <p:cellEditor>
-               <f:facet name="output"><h:outputText value="#{shelf.productAlb}" /></f:facet>
+               <f:facet name="output"><h:outputText value="#{shelf.productAlb.ID}" /></f:facet>
                <f:facet name="input">
-                   <p:selectOneMenu converter="someConverter" value="#{productBean.products}"  style="width:100%">
-                       <f:selectItems value="#{productBean.products}" converter="someConverter"  var="man" itemLabel="#{man}" itemValue="#{man}" />
+                   <p:selectOneMenu  value="#{shelf.productAlb}" converter="omnifaces.SelectItemsConverter" style="width:100%">
+                       <f:selectItems value="#{productBean.products}"  var="product" itemLabel="#{product.ID}" itemValue="#{product}" />
                    </p:selectOneMenu>
                </f:facet>
            </p:cellEditor>

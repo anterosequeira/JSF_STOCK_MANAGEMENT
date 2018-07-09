@@ -1,3 +1,10 @@
+io/altar/jseproject/control/controlShelf.class
 io/altar/jseproject/model/Entity.class
-io/altar/jseproject/model/Shelf.class
+io/altar/jseproject/repositories/ProductRepository.class
 io/altar/jseproject/model/Product.class
+io/altar/jseproject/beans/ProductBean.class
+io/altar/jseproject/repositories/ShelfRepository.class
+io/altar/jseproject/beans/ShelfBean.class
+io/altar/jseproject/control/controlProduct.class
+io/altar/jseproject/model/Shelf.class
+io/altar/jseproject/repositories/EntityRepository.class

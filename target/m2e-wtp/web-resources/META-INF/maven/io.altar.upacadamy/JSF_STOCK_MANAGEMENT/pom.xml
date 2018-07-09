@@ -10,18 +10,28 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
-    <groupId>org.primefaces</groupId>
-    <artifactId>primefaces</artifactId>
-    <version>6.2</version>
-</dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<version>2.1</version>
+		</dependency>
 	</dependencies>
+
 	<build>
 		<finalName>JSF_STOCK_MANAGEMENT</finalName>
 		<plugins>

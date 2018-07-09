@@ -2,8 +2,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+		
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	</h:head>
+	<h:body>
+	<p:dataTable var="product" value="#{productBean.products}">
+    <p:column headerText="Id">
+        <h:outputText value="#{product.ID}" />
+    </p:column>
+ 
+    <p:column headerText="VUD">
+        <h:outputText value="#{product.VUD}" />
+    </p:column>
+ 
+    <p:column headerText="IVA">
+        <h:outputText value="#{product.IVA}" />
+    </p:column>
+    
+    <p:column headerText="PVP">
+        <h:outputText value="#{product.PVP}" />
+    </p:column>
+ 
+</p:dataTable>
+	<h:form>					
+		
+			<p:commandButton value="voltar" action="index" />
+		</h:form>
 
-	<ui:composition template="">
-	</ui:composition>
+	</h:body>
 </html>

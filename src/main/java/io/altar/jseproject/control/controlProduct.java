@@ -1,43 +1,39 @@
 package io.altar.jseproject.control;
 
 import java.util.Collection;
-import java.util.Scanner;
 
 import javax.enterprise.context.RequestScoped;
 
-import io.altar.jseproject.model.Entity;
 import io.altar.jseproject.model.Product;
-import io.altar.jseproject.model.Shelf;
 import io.altar.jseproject.repositories.EntityRepository;
 import io.altar.jseproject.repositories.ProductRepository;
-import io.altar.jseproject.repositories.ShelfRepository;
 
 
 @RequestScoped
 public class controlProduct {
 	
-	static EntityRepository<Product> DbProduct = ProductRepository.getInstance();
+	 EntityRepository<Product> DbProduct = ProductRepository.getInstance();
 	
-	public static void createProduct(Product p){
+	public  void createProduct(Product p){
 		
 
 		DbProduct.addEntity(p);		
 	}
 
 
-	public static Collection<Product> getProducts(){
+	public  Collection<Product> getProducts(){
 		
 		return DbProduct.getEntity();
 	}
 	
-	public static void editProduct(Product p){
+	public  void editProduct(Product p){
 		
 
 		DbProduct.editEntity(p);
 			
 	}
 	
-	public static void removeProduct(Product p){
+	public  void removeProduct(Product p){
 		
 		DbProduct.removeEntity(p);
 	}

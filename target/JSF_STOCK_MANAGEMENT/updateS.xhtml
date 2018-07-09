@@ -2,8 +2,82 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
+	  
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+	<h:form id="form">
+		<p:growl id="msgs" showDetail="true" />
 
-	<ui:composition template="">
-	</ui:composition>
+		<p:dataTable id="shelf1" var="shelf"
+			value="#{shelfBean.shelfs}" editable="true"
+			style="margin-bottom:20px">
+			<f:facet name="header">
+           Shelf editing
+       </f:facet>
+
+			<p:ajax event="rowEdit" update=":form:msgs" />
+			<p:ajax event="rowEditCancel" update=":form:msgs" />
+
+			<p:column headerText="Id">
+				<h:outputText value="#{shelf.ID}" />
+			</p:column>
+
+			<p:column headerText="capacity">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{shelf.capacity}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{shelf.capacity}" style="width:100%" label="IVA" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+			<p:column headerText="PPD">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{shelf.PPD}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{shelf.PPD}" style="width:100%" label="VUD" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			
+			<p:column headerText="Product">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{shelf.productAlb}" /></f:facet>
+               <f:facet name="input">
+                   <p:selectOneMenu  value="#{productBean.p}" converter="omnifaces.SelectItemsConverter" style="width:100%">
+                       <f:selectItems value="#{productBean.products}"  var="product" itemLabel="#{product.ID}" itemValue="#{product}" />
+                   </p:selectOneMenu>
+               </f:facet>
+           </p:cellEditor>
+       </p:column>
+
+			
+			
+			<p:column style="width:32px">
+				<p:rowEditor />
+			</p:column>
+			
+	<p:column style="width:32px">
+				<p:commandButton icon="ui-icon-trash" title="Delete"
+					action="#{shelfBean.removeShelf(shelf)}" ajax="false" />
+			</p:column>
+			
+			
+
+		</p:dataTable>
+		<p:commandButton value="voltar" action="index" />
+	</h:form>
+</h:body>
+
+
 </html>

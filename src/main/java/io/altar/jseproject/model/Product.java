@@ -1,10 +1,6 @@
 package io.altar.jseproject.model;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
 
 
 public class Product extends Entity {
@@ -53,23 +49,25 @@ public class Product extends Entity {
 		return PVP;
 	}
 	
-	
-	public String toString(){
-		String tmp = "";
-		for (Shelf s : this.list){
-			tmp += s.getID().toString() + ";";
-		}
-		
-		if(!this.list.isEmpty()){
-			return "ID:" + this.getID() + ", "+ "Lista de prateleiras onde estao exposto: " +
-				tmp + ", " + "Valor unitario de desconto: " + this.VUD + ", " +
-				"IVA: " + this.IVA + ", "+ "PVP: " + this.PVP;
-		}
-		else{
-			return "ID:" + this.getID() + ", "+ "Nao esta exposto em nenhuma parteleira " 
-					 + ", " + "Valor unitario de desconto: " + this.VUD + ", " +
-					"IVA: " + this.IVA + ", "+ "PVP: " + this.PVP;
-		}		
-	}
+
+
+
+//	public String toString(){
+//		String tmp = "";
+//		for (Shelf s : this.list){
+//			tmp += s.getID().toString() + ";";
+//		}
+//		
+//		if(!this.list.isEmpty()){
+//			return "ID:" + this.getID() + ", "+ "Lista de prateleiras onde estao exposto: " +
+//				tmp + ", " + "Valor unitario de desconto: " + this.VUD + ", " +
+//				"IVA: " + this.IVA + ", "+ "PVP: " + this.PVP;
+//		}
+//		else{
+//			return "ID:" + this.getID() + ", "+ "Nao esta exposto em nenhuma parteleira " 
+//					 + ", " + "Valor unitario de desconto: " + this.VUD + ", " +
+//					"IVA: " + this.IVA + ", "+ "PVP: " + this.PVP;
+//		}		
+//	}
 	
 }

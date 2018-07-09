@@ -20,14 +20,7 @@ public class ProductBean   {
 	private controlProduct cp;
 	
 	private Product p= new Product();
-	
-	public controlProduct getCp() {
-		return cp;
-	}
 
-	public void setCp(controlProduct cp) {
-		this.cp = cp;
-	}
 
 
 	public Product getP() {
@@ -41,19 +34,19 @@ public class ProductBean   {
 	
 	public String createProduct(Product p){
 
-		controlProduct.createProduct(p);
+		cp.createProduct(p);
 		return "index";
 	}
 	
 	public Collection<Product> getProducts(){
 		
-		return controlProduct.getProducts();
+		return cp.getProducts();
 	
 	}
 	
 	public String editProduct(Product p){
 		
-		controlProduct.editProduct(p);
+		cp.editProduct(p);
 		
 		return "index";
 		
@@ -61,7 +54,7 @@ public class ProductBean   {
 	
 	public void removeProduct(Product p){
 
-		controlProduct.removeProduct(p);
+		cp.removeProduct(p);
 	
 	}
 	
